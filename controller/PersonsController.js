@@ -71,7 +71,7 @@ const update = (request, response) => {
       error: 'Nome da tarefa não fornecido',
     })
   }
-  conn('tab_persons')
+  conn('tab_lista')
     .update({ nome, numero })
     .where({ id: id })
     .then((_) => {
@@ -86,7 +86,7 @@ const update = (request, response) => {
 
 const readById = (request, response) => {
   const id = Number(request.params.id)
-  conn('tab_persons')
+  conn('tab_lista')
     .where({ id: id })
     .first()
     .then((person) => {
@@ -101,7 +101,7 @@ const readById = (request, response) => {
 
 const del = (request, response) => {
   const id = Number(request.params.id)
-  conn('tab_persons')
+  conn('tab_lista')
     .del()
     .where({ id: id })
     .then((_) => {
