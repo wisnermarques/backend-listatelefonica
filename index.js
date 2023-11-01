@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 // Public folder for images
-app.use(express.static("public"));
+app.use(express.static('public'))
 
 app.get("/", (request, response) => {
   response.send("<h1>Seja bem vindo!</h1>");
