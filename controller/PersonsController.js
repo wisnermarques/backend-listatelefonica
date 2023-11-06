@@ -63,16 +63,26 @@ const create = (request, response) => {
 }
 
 const update = (request, response) => {
-  const { nome, numero } = request.body
+  const { nome, numero, email, endereco, dataNascimento, foto } = request.body
+  console.log(request.body)
+  
+
   const id = Number(request.params.id)
 
   if (!nome) {
     return response.status(400).json({
-      error: 'Nome da tarefa não fornecido',
+      error: 'Nome não fornecido!',
     })
   }
   conn('tab_lista')
-    .update({ nome, numero })
+    .update({
+      nome,
+      numero,
+      email,
+      endereco,
+      data_nascimento: dataNascimento,
+      foto,
+    })
     .where({ id: id })
     .then((_) => {
       response.status(200).json({ msg: 'Tarefa atualizada com sucesso!' })
