@@ -44,7 +44,7 @@ function save(req, res) {
     .first()
     .where({ email: email })
     .then((user) => {
-      if (user.length === 0) {
+      if (user === undefined) {
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(senha, salt)
 
