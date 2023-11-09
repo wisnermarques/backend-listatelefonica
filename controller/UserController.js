@@ -18,9 +18,10 @@ function login(req, res) {
           }
 
           // o token expira em uma hora (60*60 segundos)
-          const token = jwt.sign(userForToken, 'Meu segredo', { //process.env.SECRET
+          const token = jwt.sign(userForToken, 'Meu segredo', {
+            //process.env.SECRET
             expiresIn: 60 * 60,
-          }) 
+          })
           const dataUser = {
             id: user.id,
             nome: user.nome,
@@ -63,9 +64,4 @@ function save(req, res) {
     })
 }
 
-function logout(req, res) {
-  //   req.session.user = undefined
-  //   res.redirect('/admin/user/login')
-}
-
-module.exports = { save, login, logout }
+module.exports = { save, login }
