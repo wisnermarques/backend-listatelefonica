@@ -10,7 +10,7 @@ module.exports = {
     connection: {
       database: 'bd_lista',
       user: 'root',
-      password: 'root'
+      password: ''
     },
   },
 
