@@ -64,4 +64,15 @@ function save(req, res) {
     })
 }
 
-module.exports = { save, login }
+function read(req, res) {
+  conn('tab_users')
+    .select('id', 'nome', 'email')
+    .then((user) => {
+      res.status(200).json(user)
+    })
+    .catch((err) =>
+      res.json({ error: 'Houve um erro ao cadastrar o usuário:' + err })
+    )
+}
+
+module.exports = { save, login, read }
