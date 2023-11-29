@@ -5,8 +5,6 @@ function authMiddleware(req, res, next) {
   // Verifica se o header 'Authorization' está presente na requisição
   const token = req.headers['authorization']
 
-  console.log(token)
-
   if (!token) {
     return res
       .status(401)

@@ -18,7 +18,7 @@ app.get("/", (request, response) => {
 });
 
 app.use("/api/persons", PersonsRoutes);
-app.use("/api/user", UserRoutes);
+app.use("/api/users", UserRoutes);
 
 const PORT = 3001;
 app.listen(PORT, () => {
