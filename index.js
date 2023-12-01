@@ -9,10 +9,10 @@ app.use(cors());
 app.use(express.json());
 
 // Serve arquivos estáticos a partir da pasta 'build'
-app.use(express.static("build"));
+app.use('/build', express.static("build"));
 
 // Pasta pública para imagens
-// app.use(express.static("public"));
+app.use('/public', express.static("public"));
 
 // Rotas para Persons e Users
 app.use("/api/persons", PersonsRoutes);
