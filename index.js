@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.static("build"));
 
 // Pasta pública para imagens
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
 // Rotas para Persons e Users
 app.use("/api/persons", PersonsRoutes);
