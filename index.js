@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 
 const PersonsRoutes = require("./routes/PersonsRoutes");
-const UsersRoutes = require("./routes/UsersRoutes");
 
 const app = express();
 
@@ -18,8 +17,6 @@ app.get("/", (request, response) => {
 });
 
 app.use("/api/persons", PersonsRoutes);
-
-app.use("/api/users", UsersRoutes);
 
 const PORT = 3001;
 app.listen(PORT, () => {
