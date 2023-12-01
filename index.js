@@ -15,10 +15,6 @@ app.use(express.static("build"));
 // Public folder for images
 app.use(express.static("public"));
 
-app.get("/", (request, response) => {
-  response.send("<h1>Seja bem vindo!</h1>");
-});
-
 app.use("/api/persons", PersonsRoutes);
 app.use("/api/users", UsersRoutes);
 
