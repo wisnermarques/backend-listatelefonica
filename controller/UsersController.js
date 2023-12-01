@@ -6,7 +6,7 @@ const read = (request, response) => {
   conn("tab_users")
     .select("id", "nome", "email")
     .then((users) => {
-      response.status(201).json(users);
+      response.status(200).json(users);
     })
     .catch((error) =>
       response
